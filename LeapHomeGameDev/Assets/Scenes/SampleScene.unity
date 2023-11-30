@@ -1596,12 +1596,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2016943173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724430380
 GameObject:
@@ -6490,7 +6490,8 @@ GameObject:
   - component: {fileID: 1869019596}
   - component: {fileID: 1869019595}
   - component: {fileID: 1869019594}
-  m_Layer: 0
+  - component: {fileID: 1869019597}
+  m_Layer: 6
   m_Name: TerrainBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15625,7 +15626,7 @@ CompositeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -17956,6 +17957,25 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!251 &1869019597
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869019590}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2016943171
 GameObject:
   m_ObjectHideFlags: 0
@@ -17969,6 +17989,7 @@ GameObject:
   - component: {fileID: 2016943174}
   - component: {fileID: 2016943175}
   - component: {fileID: 2016943176}
+  - component: {fileID: 2016943177}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -18037,10 +18058,11 @@ Transform:
   m_GameObject: {fileID: 2016943171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3851336, y: 0.702, z: 0}
+  m_LocalPosition: {x: -7, y: 2.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2016943174
@@ -18113,7 +18135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.83268523}
+  m_Size: {x: 0.9, y: 0.79}
   m_EdgeRadius: 0
 --- !u!114 &2016943176
 MonoBehaviour:
@@ -18129,10 +18151,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 0
-  moveSpeed: 7
-  jumpForce: 14
-  jumpSoundEffect: {fileID: 0}
+    m_Bits: 64
+  moveSpeed: 5
+  jumpForce: 4
+--- !u!95 &2016943177
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016943171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a37e43ffb585b34bb900db0fa12c0be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2115268087
 GameObject:
   m_ObjectHideFlags: 0
@@ -18939,6 +18981,5 @@ Tilemap:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 1058256256}
   - {fileID: 2016943173}
