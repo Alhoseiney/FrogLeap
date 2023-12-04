@@ -9,12 +9,17 @@ public class coutdownTimer2 : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float startTime = 60f;
-
     private float currentTime;
+    //[SerializeField] private AudioSource deathSoundEffect;
+    private AudioSource deathAudioSource;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        deathAudioSource = GetComponent<AudioSource>();
         currentTime = startTime;
         UpdateTimerText();
     }
@@ -26,7 +31,7 @@ public class coutdownTimer2 : MonoBehaviour
         if (currentTime <= 0f)
         {
             currentTime = 0f;
-            // Handle end of countdown
+            RestartGame();
         }
 
         UpdateTimerText();
@@ -39,8 +44,12 @@ public class coutdownTimer2 : MonoBehaviour
     void RestartGame()
     {
         // Reload the current scene
+        deathAudioSource.Play();
+
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+
+
 }
 
