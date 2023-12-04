@@ -34,7 +34,7 @@ public class coutdownTimer2 : MonoBehaviour
     }
     void UpdateTimerText()
     {
-        timerText.SetText(currentTime.ToString("0.00"));
+        timerText.SetText(currentTime.ToString("0"));
     }
     void RestartGame()
     {
