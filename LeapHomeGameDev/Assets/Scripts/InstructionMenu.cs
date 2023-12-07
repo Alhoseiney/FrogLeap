@@ -7,6 +7,6 @@ public class InstructionMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
